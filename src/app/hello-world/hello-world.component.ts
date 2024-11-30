@@ -1,5 +1,5 @@
 // hello-world.component.ts
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hello-world',
@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './hello-world.component.html',
   styleUrl: './hello-world.component.css',
 })
-export class HelloWorldComponent {}
+export class HelloWorldComponent {
+  @Input()
+  name = 'World';
+}
