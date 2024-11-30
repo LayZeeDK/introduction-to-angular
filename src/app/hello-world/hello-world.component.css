@@ -1,0 +1,4 @@
+/* hello-world.component.css */
+:host {
+  display: block;
+}
