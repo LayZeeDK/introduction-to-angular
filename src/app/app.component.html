@@ -1,2 +1,3 @@
 <!-- app.component.html -->
-<app-hello-world name="TimePlan" />
+<app-hello-world name="TimePlan" (message)="receivedMessage = $event" />
+<p>Received: {{ receivedMessage }}</p>

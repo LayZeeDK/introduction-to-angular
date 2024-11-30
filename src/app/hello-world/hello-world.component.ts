@@ -1,5 +1,5 @@
 // hello-world.component.ts
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hello-world',
@@ -10,4 +10,6 @@ import { Component, Input } from '@angular/core';
 export class HelloWorldComponent {
   @Input()
   name = 'World';
+  @Output()
+  message = new EventEmitter<string>();
 }
