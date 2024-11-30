@@ -1,3 +1,5 @@
 <!-- app.component.html -->
 <app-hello-world name="TimePlan" (message)="receivedMessage = $event" />
+@if (receivedMessage) {
 <p>Received: {{ receivedMessage }}</p>
+}
