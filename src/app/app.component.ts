@@ -9,5 +9,9 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  receivedMessage = '';
+  messages: readonly string[] = [];
+
+  receiveMessage(message: string) {
+    this.messages = [...this.messages, message];
+  }
 }

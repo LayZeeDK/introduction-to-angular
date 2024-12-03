@@ -1,5 +1,8 @@
 <!-- app.component.html -->
-<app-hello-world name="TimePlan" (message)="receivedMessage = $event" />
-@if (receivedMessage) {
-  <p>Received: {{ receivedMessage }}</p>
+<app-hello-world name="TimePlan" (message)="receiveMessage($event)" />
+<h2>Received messages</h2>
+@for (message of messages; track $index) {
+  <p>Message #{{ $index + 1 }}: {{ message }}</p>
+} @empty {
+  <p><em>No messages received.</em></p>
 }
