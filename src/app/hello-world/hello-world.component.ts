@@ -11,5 +11,5 @@ export class HelloWorldComponent {
   @Input()
   name = 'World';
   @Output()
-  message = new EventEmitter<string>();
+  messageSent = new EventEmitter<string>();
 }
