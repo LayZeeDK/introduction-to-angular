@@ -1,5 +1,5 @@
 // app.component.ts
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { TodayComponent } from './today/today.component';
 
@@ -8,7 +8,6 @@ import { TodayComponent } from './today/today.component';
   imports: [HelloWorldComponent, TodayComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
   messages: readonly string[] = [];

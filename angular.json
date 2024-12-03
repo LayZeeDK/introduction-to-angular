@@ -4,7 +4,6 @@
   "newProjectRoot": "projects",
   "schematics": {
     "@schematics/angular:component": {
-      "changeDetection": "OnPush",
       "skipTests": true
     }
   },
