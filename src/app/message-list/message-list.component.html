@@ -1,0 +1,6 @@
+<!-- message-list.component.html -->
+@for (message of messages; track $index) {
+  <p>Message #{{ $index + 1 }}: {{ message }}</p>
+} @empty {
+  <p><em>No messages received.</em></p>
+}
