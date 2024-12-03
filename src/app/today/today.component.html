@@ -1,7 +1,7 @@
 <!-- today.component.html -->
 <p>
   Today is
-  @switch (today.getDay()) {
+  @switch (now.getDay()) {
     @case (0) {
       Sunday
     }
@@ -27,4 +27,6 @@
       a new day
     }
   }
+  and the time is {{ now | date: "mediumTime" }}
+  <button (click)="refreshTime()">Refresh time</button>
 </p>

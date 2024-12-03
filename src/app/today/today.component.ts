@@ -1,12 +1,17 @@
 // today.component.ts
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-today',
-  imports: [],
+  imports: [DatePipe],
   templateUrl: './today.component.html',
   styleUrl: './today.component.css',
 })
 export class TodayComponent {
-  today = new Date();
+  now = new Date();
+
+  refreshTime() {
+    this.now = new Date();
+  }
 }
