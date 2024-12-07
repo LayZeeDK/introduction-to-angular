@@ -2,3 +2,17 @@
 :host {
   display: block;
 }
+
+button {
+  background-color: purple;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: rebeccapurple;
+  }
+
+  &:active {
+    background-color: blueviolet;
+  }
+}
