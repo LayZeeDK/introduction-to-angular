@@ -1,6 +1,9 @@
 <!-- app.component.html -->
-<app-hello-world name="TimePlan" (messageSent)="receiveMessage($event)" />
+<app-hello-world
+  name="TimePlan"
+  (messageSent)="messageService.receiveMessage($event)"
+/>
 <h2>Today</h2>
 <app-today />
 <h2>Received messages</h2>
-<app-message-list [messages]="messages" />
+<app-message-list [messages]="messageService.messages" />

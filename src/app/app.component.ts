@@ -1,7 +1,8 @@
 // app.component.ts
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { MessageListComponent } from './message-list/message-list.component';
+import { MessageService } from './message.service';
 import { TodayComponent } from './today/today.component';
 
 @Component({
@@ -11,9 +12,5 @@ import { TodayComponent } from './today/today.component';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  messages: readonly string[] = [];
-
-  receiveMessage(message: string) {
-    this.messages = [...this.messages, message];
-  }
+  messageService = inject(MessageService);
 }
