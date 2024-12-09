@@ -1,0 +1,4 @@
+/* joke.component.css */
+:host {
+  display: block;
+}
