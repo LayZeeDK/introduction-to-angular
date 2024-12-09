@@ -1,0 +1,12 @@
+<!-- navigation.component.html -->
+<nav>
+  <ul>
+    @for (route of routes; track route) {
+      <li>
+        <a [routerLink]="route.path" routerLinkActive="is-active">
+          {{ route.title }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
