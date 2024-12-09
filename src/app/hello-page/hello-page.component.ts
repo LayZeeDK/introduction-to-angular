@@ -1,5 +1,6 @@
 // hello-page.compoennt.ts
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { HelloWorldComponent } from '../hello-world/hello-world.component';
 import { MessageService } from '../message.service';
 
@@ -11,4 +12,5 @@ import { MessageService } from '../message.service';
 })
 export class HelloPageComponent {
   messageService = inject(MessageService);
+  router = inject(Router);
 }
