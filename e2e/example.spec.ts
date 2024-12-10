@@ -1,8 +1,10 @@
+// example.spec.ts
 import { expect, test } from '@playwright/test';
 
-test('has title', async ({ page }) => {
+test('has greeting', async ({ page }) => {
   await page.goto('/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/MyApp/);
+  // Expect a greeting "to contain" a substring.
+  const greeting = page.getByText('hello,');
+  await expect(greeting).toContainText('Hello, TimePlan!');
 });
