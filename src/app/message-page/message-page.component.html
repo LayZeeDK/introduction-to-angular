@@ -1,3 +1,4 @@
 <!-- message-page.component.html -->
 <h2>Received messages</h2>
-<app-message-list [messages]="messageService.messages" />
+@let messages = (messageService.messages$ | async) ?? [];
+<app-message-list [messages]="messages" />
