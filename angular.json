@@ -85,6 +85,17 @@
             "styles": ["src/styles.css"],
             "scripts": []
           }
+        },
+        "e2e": {
+          "builder": "playwright-ng-schematics:playwright",
+          "options": {
+            "devServerTarget": "introduction-to-angular:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "introduction-to-angular:serve:production"
+            }
+          }
         }
       }
     }
