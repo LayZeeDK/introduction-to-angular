@@ -1,6 +1,8 @@
 // joke.component.ts
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { tap } from 'rxjs';
 import { JokeResponse } from '../joke-response';
 
 @Component({
@@ -18,8 +20,13 @@ export class JokeComponent {
   joke?: string;
 
   constructor() {
-    this.jokeRequest$.subscribe((response) => {
-      this.joke = response.joke;
-    });
+    this.jokeRequest$
+      .pipe(
+        tap((response) => {
+          this.joke = response.joke;
+        }),
+        takeUntilDestroyed(),
+      )
+      .subscribe();
   }
 }
