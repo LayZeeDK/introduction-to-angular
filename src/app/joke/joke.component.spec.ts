@@ -1,5 +1,7 @@
+// joke.component.spec.ts
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { JokeComponent } from './joke.component';
 
 describe('JokeComponent', () => {
@@ -8,9 +10,9 @@ describe('JokeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [JokeComponent]
-    })
-    .compileComponents();
+      imports: [JokeComponent],
+      providers: [provideHttpClient(), provideHttpClientTesting()],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(JokeComponent);
     component = fixture.componentInstance;

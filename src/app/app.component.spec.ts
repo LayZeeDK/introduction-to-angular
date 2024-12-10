@@ -1,10 +1,14 @@
+import { provideLocationMocks } from '@angular/common/testing';
 import { TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
+import { routes } from './app.routes';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [provideRouter(routes), provideLocationMocks()],
     }).compileComponents();
   });
 
@@ -14,18 +18,14 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'introduction-to-angular' title`, () => {
+  it('should render a greeting', async () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('introduction-to-angular');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+    fixture.autoDetectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Hello, introduction-to-angular',
+    compiled.querySelector('a')?.click();
+    await fixture.whenStable();
+    expect(compiled.querySelector('p')?.textContent).toContain(
+      'Hello, TimePlan!',
     );
   });
 });
