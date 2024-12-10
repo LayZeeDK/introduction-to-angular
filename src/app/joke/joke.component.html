@@ -1,4 +1,5 @@
 <!-- joke.component.html -->
+@let joke = joke$ | async;
 @if (joke) {
   <p>{{ joke }}</p>
 } @else {
