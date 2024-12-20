@@ -1,5 +1,6 @@
 <!-- today.component.html -->
 <p>
-  Today is {{ now | weekday }} and the time is {{ now | date: "mediumTime" }}
+  Today is <span data-testid="weekday">{{ now | weekday }}</span> and the time
+  is {{ now | date: "mediumTime" }}
   <button (click)="refreshTime()">Refresh time</button>
 </p>
