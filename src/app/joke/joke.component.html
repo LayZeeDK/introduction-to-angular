@@ -1,7 +1,7 @@
 <!-- joke.component.html -->
 @let joke = joke$ | async;
 @if (joke) {
-  <p>{{ joke }}</p>
+  <p data-testid="joke">{{ joke }}</p>
 } @else {
   <p><em>Loading joke...</em></p>
 }
